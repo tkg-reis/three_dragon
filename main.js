@@ -75,12 +75,12 @@ let rot = 0;
             alpha: true,
             antialias: true,
         });
-        renderer.setSize(window.innerWidth / 4 , window.innerHeight);
+        renderer.setSize(window.innerWidth , window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         
         window.addEventListener("resize", onWindowResize);
         
-        // animate();
+        animate();
     }
     init();  
     function animate() {
@@ -103,12 +103,12 @@ let rot = 0;
         renderer.render(scene, camera);
         requestAnimationFrame(animate);
     }
-}
-function onWindowResize() {
-    console.log(window.innerWidth / 4);
-    renderer.setSize(window.innerWidth / 4, window.innerHeight);
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
+    function onWindowResize() {
+        console.log(window.innerWidth);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+    }
 }
 
 // gsap
@@ -116,8 +116,8 @@ function onWindowResize() {
 {
     // loading animation
     let bars;
-    let W = window.innerWidth;
-    console.log(W);
+    // let W = window.innerWidth;
+    // console.log(W);
     function makeFrag() {
         for(let i = 0; i < 200; i++){
             bars = document.createElement('span');
@@ -132,9 +132,7 @@ function onWindowResize() {
                 amount: 10,
             },
             onComplete :() => {
-                if(W < 710) {
-                    gsapAnimation();
-                }
+                gsapAnimation();
             }
         })
     }
@@ -276,7 +274,7 @@ function onWindowResize() {
                 end: "+=100",
                 pin: true,
                 scrub: .6,
-                markers: true,
+                // markers: true,
             }
         })
     });
