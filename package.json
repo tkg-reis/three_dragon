@@ -1,0 +1,21 @@
+{
+  "name": "three-dragon-portfolio-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.10.5",
+    "gsap": "^3.12.1",
+    "gsap-trial": "^3.12.1",
+    "lil-gui": "^0.18.2",
+    "three": "^0.153.0"
+  }
+}

@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;500;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;  
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body {
+  color: #fafafa;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  font-family: 'Merienda', cursive;
+  line-height: 1.75;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.loading_section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #333;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  overflow-y: hidden;
+  z-index: 999;
+}
+
+.loading {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.loading span {
+  width: .5vw;
+  height: 100%;
+  background: rgb(0,0,0);
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 25%, rgba(221,0,0,1) 50%, rgba(255,207,0,1) 75%);;
+  z-index: 10000;
+}
+
+main {
+  position: absolute;
+  width: 100%;
+  height: 200vh;
+  z-index: 100;
+  /* font-size: 2rem; */
+  margin-top: 70px;
+}
+
+.first {
+  font-size: 1rem;
+}
+@media screen and (min-width: 1080px) {
+  .first {
+    font-size: 5rem;
+  }
+}
+
+.sec {
+  min-height: 100vh;
+  padding: 20px;
+  font-size: 2rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 1080px) {
+  section {
+    font-size: 3.5rem;
+  }
+}
+
+.works h2 {
+  letter-spacing: 0.1em;
+  -webkit-text-stroke: 3px #fafafa;
+  color: transparent;
+  display: flex;
+  overflow: hidden;
+}
+
+.works h2 span {
+  display: block;
+  position: relative;
+}
+
+.works h2 span::before {
+  content: attr(data-char);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: red;
+  transform: translateY(-110%);
+}
+
+.works h2 span:hover{
+  color: #fafafa;
+}
+
+.wrap {
+  display: flex;
+  width: 92%;
+  height: auto;
+  margin: 10% auto;
+  gap: 2rem;
+}
+
+.box {
+  width: 20%;
+  height: 55vh;
+  overflow: hidden;
+}
+
+.box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.skills p:not(:first-child) {
+  margin-top: 4rem;
+  height: 20vh;
+}
+
+.gsap_module.is_active {
+  color: #333;
+}
+
+a {
+  margin-top: 5rem;
+  text-decoration: none;
+}
+
+input {
+  height: 30px;
+  width: 30px;
+  margin-right: 1rem;
+}
+
+label input ~ a {
+  visibility: hidden;
+  display: block;
+  font-size: 3rem;
+  color: white;
+  max-width: 600px;
+  background-color: rgba(86, 82, 82, 0.651);
+  padding: 1rem;
+  border-radius: 50vh;
+  outline: none;
+  border: none;
+  transition: all .25s;
+  cursor: pointer;
+  text-align: center;
+}
+
+input:checked ~ a {
+  visibility: visible;
+}
+
+button:hover {
+  background-color: rgba(60, 56, 56, 0.798);
+  text-decoration: underline #fafafa;
+}
+
+.sns_container {
+  position: relative;
+}
+
+.sns_wrapper {
+  position: absolute;
+  width: 10vw;
+  height: 16vh;
+  left: 10vw;
+  top: -6vw;
+  z-index: 10;
+  border-radius: 50%;
+  border: 5px solid #fafafa;
+  overflow: hidden;
+  visibility: hidden;
+  transform: scale(.3);
+  animation: rotate 1s ease infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.sns_container.is_active > .sns_wrapper {
+  visibility: visible;
+}
+
+.sns_wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sns_txts {
+  overflow: hidden;
+}
+
+.sns_txt:not(:first-child) {
+  margin-top: 3rem;
+}
+
+.sns_link {
+  color: #fafafa;
+  transition: all .4s ease;
+}
+
+.sns_link:hover {
+  color: #333;
+}
+
+main footer {
+  text-align: center;
+  width: 110%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
