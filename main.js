@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js"
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import gltfFile from "./public/scene.gltf";
+
 
 const canvas = document.querySelector("#webgl");
 
@@ -42,13 +42,9 @@ let rot = 0;
         scene.background = bgTexture;
 
         const gltfLoader = new GLTFLoader();
-        drache = gltfLoader.load(gltfFile,(gltf) => {
+        drache = gltfLoader.load("./scene.gltf",(gltf) => {
             model = gltf.scene;
-            if(window.innerWidth < 720) {
-                model.scale.set(1, 1, 1);
-            } else {
-                model.scale.set(3, 3, 3);
-            }
+            model.scale.set(3, 3, 3);
             model.position.set(1,1,1);
             scene.add(model);
             drache = true;
