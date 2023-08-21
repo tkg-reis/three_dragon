@@ -41,7 +41,7 @@ let rot = 0;
         scene.background = bgTexture;
 
         const gltfLoader = new GLTFLoader();
-        drache = gltfLoader.load("./img/scene.gltf",(gltf) => {
+        drache = gltfLoader.load("public/scene.gltf",(gltf) => {
             model = gltf.scene;
             if(window.innerWidth < 720) {
                 model.scale.set(1, 1, 1);
