@@ -41,7 +41,7 @@ let rot = 0;
         scene.background = bgTexture;
 
         const gltfLoader = new GLTFLoader();
-        drache = gltfLoader.load("./scene.gltf",(gltf) => {
+        drache = gltfLoader.load("./img/scene.gltf",(gltf) => {
             model = gltf.scene;
             if(window.innerWidth < 720) {
                 model.scale.set(1, 1, 1);
@@ -513,13 +513,20 @@ let rot = 0;
     const viewport = document.querySelector('meta[name="viewport"]');
     function switchViewport() {
         const value =
-            window.outerWidth > 800
+            window.outerWidth > 1280
             ? 'width=device-width,initial-scale=1'
-            : 'width=800';
+            : 'width=1280';
         if (viewport.getAttribute('content') !== value) {
             viewport.setAttribute('content', value);
         }
     }
-    addEventListener('resize', switchViewport, false);
+    addEventListener('load', switchViewport, false);
     switchViewport();
 }
+
+// スマホサイズは省く
+// 普通に生きたい
+// 自分の普通・幸せを考える
+// 普通の基準
+// モデルを見つける
+// 問題解決能力
