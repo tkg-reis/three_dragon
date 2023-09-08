@@ -26,7 +26,39 @@ canvas {
   left: 0;
 }
 
-.loading_section {
+
+@media screen and (max-width: 1079px) {
+  .sp_style {
+    margin: 0 auto;
+    width: 92%;
+    padding: 16px 24px;
+    max-width: 1079px;
+    font-weight: bold;
+    color: #fafafa;
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .sp_ttl {
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .sp_style {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+
+  .loading_section {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -36,6 +68,7 @@ canvas {
   overflow-y: hidden;
   z-index: 999;
 }
+
 
 .loading {
   position: relative;
@@ -50,6 +83,15 @@ canvas {
   background: rgb(0,0,0);
   background: linear-gradient(to bottom, rgba(0,0,0,1) 25%, rgba(221,0,0,1) 50%, rgba(255,207,0,1) 75%);;
   z-index: 10000;
+}
+}
+
+@media screen and (max-width: 1079px) {
+  main {
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 
 main {

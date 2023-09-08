@@ -11,6 +11,8 @@ let scene, camera, renderer, done, model, mixer, drache;
 
 // three.js
 let rot = 0;
+let width = window.innerWidth;
+
 {
     function init() {
         scene = new THREE.Scene();
@@ -79,7 +81,9 @@ let rot = 0;
         
         animate();
     }
-    init();  
+    if(width > 1079) {
+        init();  
+    }
     function animate() {
         if(mixer) {
             mixer.update(0.055);
@@ -113,8 +117,7 @@ let rot = 0;
 {
     // loading animation
     let bars;
-    // let W = window.innerWidth;
-    // console.log(W);
+    
     function makeFrag() {
         for(let i = 0; i < 200; i++){
             bars = document.createElement('span');
@@ -128,13 +131,16 @@ let rot = 0;
                 from: "random",
                 amount: 10,
             },
-            onComplete :() => {
+            onComplete :() => { 
                 gsapAnimation();
+                
             }
         })
     }
     window.addEventListener('load', () => {
-        makeFrag();
+        // if(width > 1079) {
+            makeFrag();
+        // }
         webStorage();
         setTimeout(()=>{
             const loadSec = document.querySelector('.loading_section');
@@ -506,20 +512,20 @@ let rot = 0;
 
 }
 
-{
-    const viewport = document.querySelector('meta[name="viewport"]');
-    function switchViewport() {
-        const value =
-            window.outerWidth > 1280
-            ? 'width=device-width,initial-scale=1'
-            : 'width=1280';
-        if (viewport.getAttribute('content') !== value) {
-            viewport.setAttribute('content', value);
-        }
-    }
-    addEventListener('load', switchViewport, false);
-    switchViewport();
-}
+// {
+//     const viewport = document.querySelector('meta[name="viewport"]');
+//     function switchViewport() {
+//         const value =
+//             window.outerWidth > 375
+//             ? 'width=device-width,initial-scale=1'
+//             : 'width=375';
+//         if (viewport.getAttribute('content') !== value) {
+//             viewport.setAttribute('content', value);
+//         }
+//     }
+//     addEventListener('load', switchViewport, false);
+//     switchViewport();
+// }
 
 // スマホサイズは省く
 // 普通に生きたい
